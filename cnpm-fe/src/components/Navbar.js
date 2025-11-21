@@ -6,10 +6,8 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <div className="navbar__logo">
-        <img src={logo} alt="Logo" />
-        {/* <div className="navbar__brand">eParkKTX<br /><span className="navbar__subtitle">Parking System</span></div> */}
-      </div>
+       <div className="navbar__brand">BK<span className="navbar__subtitle">TutorHub</span></div> 
+      
       <ul className="navbar__menu">
         <li><Link to="/">Trang chủ</Link></li>
         <li><Link to="/services">Dịch Vụ</Link></li>

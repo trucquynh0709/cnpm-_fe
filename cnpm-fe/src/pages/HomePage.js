@@ -30,13 +30,13 @@ export default function HomePage() {
             <span className="badge">Manifest</span>
 
             <h1 className="title">
-              Hệ thống <span className="highlight">quản lý</span><br />
-              thẻ xe <span className="highlight">ký túc xá</span>
+              Tìm tutor <span className="highlight">phù hợp</span><br />
+              học tập <span className="highlight">hiệu quả</span>
             </h1>
 
             <p className="description">
-              Giải pháp số hóa hoàn toàn — Đăng ký online, tra cứu nhanh,<br />
-              gia hạn dễ dàng và thanh toán tự động.
+              Đồng hành cùng sinh viên Bách Khoa - Kết nối sinh viên và tutor, <br/>
+              nâng tầm chất lượng học tập.
             </p>
 
             <div className="buttons">
@@ -44,13 +44,13 @@ export default function HomePage() {
                 onClick={handleStart}
                 className="homepage-btn homepage-btn-primary"
               >
-                Bắt đầu
+                Tìm gia sư ngay
               </button>
               <button
                 onClick={handleContact}
                 className="homepage-btn homepage-btn-secondary"
               >
-                Liên hệ
+                Tìm hiểu thêm
               </button>
             </div>
           </div>
@@ -63,83 +63,47 @@ export default function HomePage() {
               className="ellipse-img"
             />
             <img
-              src="/images/scooter.png"
-              alt="Scooter Illustration"
-              className="scooter-img"
+              src="/images/hero-section-homepage.png"
+              alt="Study Illustration"
+              className="study-img"
             />
           </div>
         </div>
       </div>
 
-      <section className="service-section">
-        <div className="service-container">
-          <div className="service-left">
-            <img src="/images/girl-scooter.png" alt="Girl on Scooter" className="girl-scooter-img" />
-            <img
-              src="/images/ellipse-1.png"
-              alt="Ellipse"
-              className="ellipse-1-img"
-            />
+
+      <section className="how-it-works">
+        <div className="how-it-works-container">
+            <span className="badge">CÁCH THỨC HOẠT ĐỘNG</span>
+            <p className="subtitle">
+            Chỉ với vài bước đơn giản: đăng ký tài khoản, chọn tutor phù hợp, đặt lịch học và bắt đầu hành trình chinh phục tri thức cùng BK TutorHub!
+          </p>
+          <div className="steps-grid">
+          <div className="step-card">
+            <div className="step-number">1</div>
+            <h3>Đăng ký tài khoản</h3>
+            <p>Tạo tài khoản miễn phí và hoàn thiện hồ sơ học viên</p>
           </div>
 
-          <div className="service-right">
-            <span className="badge">DỊCH VỤ</span>
-            <h2 className="section-title">
-              Trải nghiệm gửi xe<br />
-              <span className="highlight-blue">Dễ dàng tại ký túc xá</span>
-            </h2>
-            <p className="section-description">
-              Giúp sinh viên gửi xe nhanh chóng, an toàn và tiện lợi ngay tại KTX.
-            </p>
-
-            <div className="features-grid">
-              <div className="feature-card">
-                <div className="feature-icon">
-                  <img src="/images/icon-parking.png" alt="Parking Icon" />
-                </div>
-                <div className="feature-content">
-                  <h3 className="feature-title">
-                    Đặt chỗ đậu xe <span className="highlight-blue">dễ dàng</span>
-                  </h3>
-                </div>
-              </div>
-
-              <div className="feature-card">
-                <div className="feature-icon">
-                  <img src="/images/icon-payment.png" alt="Payment Icon" />
-                </div>
-                <div className="feature-content">
-                  <h3 className="feature-title">
-                    Quản lý vé & thanh toán{' '}
-                    <span className="highlight-blue">online</span>
-                  </h3>
-                </div>
-              </div>
-
-              <div className="feature-card">
-                <div className="feature-icon">
-                  <img src="/images/icon-tracking.png" alt="Tracking Icon" />
-                </div>
-                <div className="feature-content">
-                  <h3 className="feature-title">
-                    Theo dõi thời gian{' '}
-                    <span className="highlight-blue">thực</span>
-                  </h3>
-                </div>
-              </div>
-
-              <div className="feature-card">
-                <div className="feature-icon">
-                  <img src="/images/icon-security.png" alt="Security Icon" />
-                </div>
-                <div className="feature-content">
-                  <h3 className="feature-title">
-                    <span className="highlight-blue">Bảo mật</span> & xác thực sinh viên
-                  </h3>
-                </div>
-              </div>
-            </div>
+          <div className="step-card">
+            <div className="step-number">2</div>
+            <h3>Chọn môn học & Tutor phù hợp</h3>
+            <p>Tìm kiếm theo môn, cấp độ hoặc xem danh sách tutor nổi bật</p>
           </div>
+
+          <div className="step-card">
+            <div className="step-number">3</div>
+            <h3>Học tập dễ dàng</h3>
+            <p>Chọn hình thức học phù hợp, đặt lịch linh hoạt theo thời gian rảnh của bạn</p>
+          </div>
+
+          <div className="step-card">
+            <div className="step-number">4</div>
+            <h3>Theo dõi tiến độ & nhận phản hồi</h3>
+            <p>Hệ thống giúp bạn xem lại buổi học, nhận góp ý từ tutor và cải thiện kỹ năng</p>
+          </div>
+        </div>
+
         </div>
       </section>
 
