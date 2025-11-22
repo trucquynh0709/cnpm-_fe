@@ -36,9 +36,6 @@ export default function RegisterCourse() {
 
         {/* Content Area */}
         <div className="content-area">
-          <div className="register-btn-wrapper">
-            <button className="btn-register">Đăng ký khóa học</button>
-          </div>
 
           {/* Search & Tutors Section */}
           <div className="tutors-section">
