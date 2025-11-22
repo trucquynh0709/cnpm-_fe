@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/ClassDetail.css';
+import '../styles/TutorProfile.css';
 import { Link } from "react-router-dom";
+import { Search, ArrowLeft, Menu, Bell, User, BookOpen, Users, Calendar, Settings } from 'lucide-react';
 import Swal from 'sweetalert2';
 
 export default function ClassDetail() {
@@ -49,19 +51,35 @@ export default function ClassDetail() {
         </nav>
 
         <div className="nav-bottom">
-          <a href="/cai-dat" className="nav-item">Cài đặt</a>
+          <a href="/profilesetting" className="nav-item">Cài đặt</a>
         </div>
       </aside>
 
         {/* Content Area */}
+        
+
         <div className="classdetail-content-area">
           <div className="classdetail-container">
+            <div className="tutor-profile-header">
+              <Link to="/tutorprofile" className="tutor-profile-header-btn" aria-label="Quay lại">
+                <ArrowLeft size={20} />
+              </Link>
+              <div className="tutor-profile-header-actions">
+                <button className="tutor-profile-header-btn">
+                  <Search size={20} />
+                </button>
+                <button className="tutor-profile-header-btn">
+                  <Bell size={20} />
+                </button>
+                <button className="tutor-profile-header-btn">
+                  <User size={20} />
+                </button>
+              </div>
+            </div>
+
             {/* Hero Section with Word Cloud */}
             <div className="classdetail-hero-section">
-              <Link to="/tutorprofile" className="classdetail-back-button">
-                ← 
-              </Link>
-              
+
               <div className="classdetail-word-cloud">
                 <img src='/images/class-thumbnail.jpg'/>
               </div>

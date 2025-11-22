@@ -7,9 +7,16 @@
 /* Header */
 .tutor-profile-header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between; /* back on left, actions on right */
   gap: 1rem;
   margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.tutor-profile-header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 .tutor-profile-header-btn {

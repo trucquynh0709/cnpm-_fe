@@ -1,6 +1,6 @@
 import '../styles/TutorProfile.css';
 import React, { useState } from 'react';
-import { Search, Menu, Bell, User, BookOpen, Users, Calendar, Settings } from 'lucide-react';
+import { Search, Menu, Bell, User, BookOpen, Users, Calendar, Settings, ArrowLeft } from 'lucide-react';
 import { Link } from "react-router-dom";
 const TutorProfile = () => {
   const [activePage, setActivePage] = useState(1);
@@ -77,22 +77,27 @@ const TutorProfile = () => {
         </nav>
 
         <div className="nav-bottom">
-          <a href="/cai-dat" className="nav-item">Cài đặt</a>
+          <a href="/profilesetting" className="nav-item">Cài đặt</a>
         </div>
       </aside>
 
       <div className="tutor-profile-main-content">
         {/* Header */}
         <div className="tutor-profile-header">
-          <button className="tutor-profile-header-btn">
-            <Search size={20} />
-          </button>
-          <button className="tutor-profile-header-btn">
-            <Bell size={20} />
-          </button>
-          <button className="tutor-profile-header-btn">
-            <User size={20} />
-          </button>
+          <Link to="/registercourse" className="tutor-profile-header-btn" aria-label="Quay lại">
+            <ArrowLeft size={20} />
+          </Link>
+          <div className="tutor-profile-header-actions">
+            <button className="tutor-profile-header-btn">
+              <Search size={20} />
+            </button>
+            <button className="tutor-profile-header-btn">
+              <Bell size={20} />
+            </button>
+            <button className="tutor-profile-header-btn">
+              <User size={20} />
+            </button>
+          </div>
         </div>
 
         {/* Content Card */}

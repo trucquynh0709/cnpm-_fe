@@ -1,4 +1,6 @@
 import '../styles/RegisterCourse.css';
+import '../styles/TutorProfile.css';
+import { Search, Menu, Bell, User, BookOpen, Users, Calendar, Settings, ArrowLeft } from 'lucide-react';
 import { Link } from "react-router-dom";
 export default function RegisterCourse() {
   return (
@@ -18,21 +20,29 @@ export default function RegisterCourse() {
         </nav>
 
         <div className="nav-bottom">
-          <a href="/cai-dat" className="nav-item">Cài đặt</a>
+          <a href="/profilesetting" className="nav-item">Cài đặt</a>
         </div>
       </aside>
 
       {/* Main Content */}
       <main className="main-content">
         {/* Header */}
-        <header className="header">
-          <div className="header-left"></div>
-          <div className="header-right">
-            <div className="avatar-small">
-              <img src="https://i.pravatar.cc/40?img=11" alt="User" />
-            </div>
+         <div className="tutor-profile-header">
+          <Link to="/" className="tutor-profile-header-btn" aria-label="Quay lại">
+            <ArrowLeft size={20} />
+          </Link>
+          <div className="tutor-profile-header-actions">
+            <button className="tutor-profile-header-btn">
+              <Search size={20} />
+            </button>
+            <button className="tutor-profile-header-btn">
+              <Bell size={20} />
+            </button>
+            <button className="tutor-profile-header-btn">
+              <User size={20} />
+            </button>
           </div>
-        </header>
+        </div>
 
         {/* Content Area */}
         <div className="content-area">
