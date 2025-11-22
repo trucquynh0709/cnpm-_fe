@@ -110,6 +110,9 @@ body{
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none; 
+  box-sizing: border-box;
+  border: 1.5px solid transparent;
 }
 
 .login-btn.hcmut {

@@ -25,10 +25,10 @@ export default function LoginPage() {
           <h1>Log in using your account on:</h1>
 
           <div className="login-options">
-            <button className="login-btn hcmut">
+            <a href="https://sso.hcmut.edu.vn/cas/login" className="login-btn hcmut">
               <img src="/images/hcmut-logo.png" alt="HCMUT" className="btn-icon" />
               Tài khoản HCMUT (HCMUT account)
-            </button>
+            </a>
 
             <button className="login-btn admin">
               Admin
