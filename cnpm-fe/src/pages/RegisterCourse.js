@@ -1,5 +1,5 @@
 import '../styles/RegisterCourse.css';
-
+import { Link } from "react-router-dom";
 export default function RegisterCourse() {
   return (
     <div className="dashboard">
@@ -62,7 +62,9 @@ export default function RegisterCourse() {
               <div className="tutor-card">
                 <img src="https://i.pravatar.cc/150?img=12" alt="ThS. Trần Phú N" />
                 <h4>ThS. Trần Phú N</h4>
+                 <Link to="/tutorprofile">
                 <button className="btn-view">Xem khóa học</button>
+                </Link>
               </div>
 
               <div className="tutor-card">
