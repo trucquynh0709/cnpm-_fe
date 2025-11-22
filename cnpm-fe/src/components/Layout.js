@@ -1,14 +1,24 @@
 import React from "react";
-
+import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
-import Footer from "./Footer"
+import Footer from "./Footer";
 
-const Layout = ({ children }) => (
-  <div>
-    <Navbar />
-    {children}
-    <Footer/>
-  </div>
-);
+const Layout = ({ children }) => {
+  const location = useLocation();
+  
+  const hasNavbar = ["/", "/login"];
+  const hasFooter = ["/", "/login"];
+  
+ const showNavbar = hasNavbar.includes(location.pathname);
+  const showFooter = hasFooter.includes(location.pathname);
+
+  return (
+    <div>
+      {showNavbar && <Navbar />}
+      {children}
+      {showFooter && <Footer />}
+    </div>
+  );
+};
 
 export default Layout;
