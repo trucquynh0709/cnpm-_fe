@@ -15,7 +15,7 @@ const Footer = () => {
           {/* Left section */}
           <div className="footer-content">
             <h2 className="footer-title">Manifest</h2>
-            <p className="footer-subtitle">Công nghệ kết nối từng chỗ đậu xe.</p>
+            <p className="footer-subtitle">Lan tỏa tri thức, kết nối đam mê học hỏi.</p>
           </div>
           
           {/* Right section - Social icons */}
@@ -46,11 +46,13 @@ const Footer = () => {
         <div className="footer-students">
           <p className="students-label">Sinh viên:</p>
           <div className="students-list">
-            <p>Huỳnh Minh Tiến - 2</p>
+            <p>Huỳnh Minh Tiến - 2313425</p>
             <p>Trần Nguyễn Phú Nghĩa - 2312284</p>
             <p>Nguyễn Ngọc Trúc Quỳnh - 2312912</p>
-            <p>Cao Thanh Lộc</p>
-            <p>Nguyễn Tăng Vũ</p>
+            <p>Nguyễn Tấn Lộc</p>
+            <p>Phan Châu Nguyên</p>
+            <p>Nguyễn Long Toàn</p>
+           
           </div>
         </div>
         

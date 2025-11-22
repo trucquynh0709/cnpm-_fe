@@ -75,30 +75,30 @@ export default function HomePage() {
       <section className="how-it-works">
         <div className="how-it-works-container">
             <span className="badge">CÁCH THỨC HOẠT ĐỘNG</span>
-            <p className="subtitle">
+            <p className="hiw-subtitle">
             Chỉ với vài bước đơn giản: đăng ký tài khoản, chọn tutor phù hợp, đặt lịch học và bắt đầu hành trình chinh phục tri thức cùng BK TutorHub!
           </p>
-          <div className="steps-grid">
-          <div className="step-card">
-            <div className="step-number">1</div>
+          <div className="hiw-steps-grid">
+          <div className="hiw-step-card">
+            <div className="hiw-step-number">1</div>
             <h3>Đăng ký tài khoản</h3>
             <p>Tạo tài khoản miễn phí và hoàn thiện hồ sơ học viên</p>
           </div>
 
-          <div className="step-card">
-            <div className="step-number">2</div>
+          <div className="hiw-step-card">
+            <div className="hiw-step-number">2</div>
             <h3>Chọn môn học & Tutor phù hợp</h3>
             <p>Tìm kiếm theo môn, cấp độ hoặc xem danh sách tutor nổi bật</p>
           </div>
 
-          <div className="step-card">
-            <div className="step-number">3</div>
+          <div className="hiw-step-card">
+            <div className="hiw-step-number">3</div>
             <h3>Học tập dễ dàng</h3>
             <p>Chọn hình thức học phù hợp, đặt lịch linh hoạt theo thời gian rảnh của bạn</p>
           </div>
 
-          <div className="step-card">
-            <div className="step-number">4</div>
+          <div className="hiw-step-card">
+            <div className="hiw-step-number">4</div>
             <h3>Theo dõi tiến độ & nhận phản hồi</h3>
             <p>Hệ thống giúp bạn xem lại buổi học, nhận góp ý từ tutor và cải thiện kỹ năng</p>
           </div>
@@ -107,58 +107,65 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="about-section">
-        <div className="about-container">
-          <span className="badge">VỀ CHÚNG TÔI</span>
+      <section className="featured-tutors">
+      <div className="tutor-container">
+        <span className="badge">Tutor nổi bật</span>
 
-          <div className="steps-wrapper">
-            <div className="step">
-              <div className="step-icon">
-                <img src="/images/icon-problem.png" alt="Register" />
-              </div>
-              <div className="step-image">
-                <img src="/images/student-room.png" alt="Student in Room" />
-              </div>
-              <p className="step-description">
-                Sinh viên ký túc xá thường phải xếp hàng gửi xe, dễ mất vé, khó biết chỗ trống và thanh toán bất tiện.
-              </p>
+        <div className="tutors-grid">
+          {/* Tutor 1 */}
+          <div className="tutor-card">
+            <div className="tutor-avatar">
+              <img src="https://i.pravatar.cc/150?img=11" alt="Trần Nguyễn Phú Nghĩa" />
             </div>
-
-            <div className="arrow-right">
-              <img src="/images/arrow-right.png" alt="Arrow" />
+            <h4>Trần Nguyễn Phú Nghĩa</h4>
+            <span className="tutor-subject">Xác suất thống kê</span>
+            <div className="stars">
+              <span className="filled">★</span>
+              <span className="filled">★</span>
+              <span className="filled">★</span>
+              <span className="filled">★</span>
+              <span className="empty">☆</span>
             </div>
+          </div>
 
-            <div className="step">
-              <div className="step-icon">
-                <img src="/images/icon-solution.png" alt="App" />
-              </div>
-              <div className="step-image">
-                <img src="/images/logo.png" alt="ePark KTX" />
-              </div>
-  
-              <p className="step-description">
-                eParkKTX giúp quản lý chỗ đậu, thanh toán và theo dõi bãi xe theo thời gian thực — tất cả chỉ trong một ứng dụng.
-              </p>
+          {/* Tutor 2 */}
+          <div className="tutor-card">
+            <div className="tutor-avatar">
+              <img src="https://i.pravatar.cc/150?img=12" alt="Trần Ngọc Bảo Duy" />
             </div>
-
-            <div className="arrow-right">
-              <img src="/images/arrow-right.png" alt="Arrow" />
+            <h4>Trần Ngọc Bảo Duy</h4>
+            <span className="tutor-subject">Cấu trúc dữ liệu và giải thuật</span>
+            <div className="stars">
+              <span className="filled">★</span>
+              <span className="filled">★</span>
+              <span className="filled">★</span>
+              <span className="filled">★</span>
+              <span className="filled">★</span>
             </div>
+          </div>
 
-            <div className="step">
-              <div className="step-icon">
-                <img src="/images/icon-future.png" alt="Success" />
-              </div>
-              <div className="step-image">
-                <img src="/images/phone-app.png" alt="Phone App" />
-              </div>
-              <p className="step-description">
-                Trở thành nền tảng gửi xe thông minh cho mọi khu ký túc xá, góp phần số hóa trải nghiệm sinh viên.
-              </p>
+          {/* Tutor 3 */}
+          <div className="tutor-card">
+            <div className="tutor-avatar">
+              <img src="https://i.pravatar.cc/150?img=13" alt="Huỳnh Minh Tiến" />
+            </div>
+            <h4>Huỳnh Minh Tiến</h4>
+            <span className="tutor-subject">Nguyên lý ngôn ngữ lập trình</span>
+            <div className="stars">
+              <span className="filled">★</span>
+              <span className="filled">★</span>
+              <span className="filled">★</span>
+              <span className="filled">★</span>
+              <span className="empty">☆</span>
             </div>
           </div>
         </div>
-      </section>
+
+        <div className="cta-wrapper">
+          <button className="btn-view-all">Xem tất cả tutor</button>
+        </div>
+      </div>
+    </section>
     </div>
   );
 }
