@@ -166,6 +166,51 @@ export default function HomePage() {
         </div>
       </div>
     </section>
+
+    <section className="testimonials">
+      <div className="testimonials-container">
+        <span className="badge">Phản hồi của học viên gần đây</span>
+
+        <div className="testimonials-grid">
+          {/* Testimonial 1 - Left */}
+          <div className="testimonial-item left">
+            <div className="avatar">
+              <img src="https://i.pravatar.cc/150?img=11" alt="Nguyễn Ngọc Trúc Quỳnh" />
+            </div>
+            <div className="speech-bubble">
+              <p className="quote">Anh mentor của mình siêu tận tâm, giúp mình nắm chắc kiến thức luôn!</p>
+              <h4>Nguyễn Ngọc Trúc Quỳnh</h4>
+              <span className="major">- Khoa học và kỹ thuật máy tính</span>
+            </div>
+          </div>
+
+          {/* Testimonial 2 - Center */}
+          <div className="testimonial-item center">
+            <div className="avatar">
+              <img src="https://i.pravatar.cc/150?img=12" alt="Ngô Đặng Tuệ Minh" />
+            </div>
+            <div className="speech-bubble">
+              <p className="quote">Anh mentor của mình siêu tận tâm, giúp mình nắm chắc kiến thức luôn!</p>
+              <h4>Ngô Đặng Tuệ Minh</h4>
+              <span className="major">- Khoa học và kỹ thuật máy tính</span>
+            </div>
+          </div>
+
+          {/* Testimonial 3 - Right */}
+          <div className="testimonial-item right">
+            <div className="avatar">
+              <img src="https://i.pravatar.cc/150?img=13" alt="Nguyễn Ngọc Trúc Quỳnh" />
+            </div>
+            <div className="speech-bubble">
+              <p className="quote">Anh mentor của mình siêu tận tâm, giúp mình nắm chắc kiến thức luôn!</p>
+              <h4>Nguyễn Ngọc Trúc Quỳnh</h4>
+              <span className="major">- Khoa học và kỹ thuật máy tính</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     </div>
   );
 }

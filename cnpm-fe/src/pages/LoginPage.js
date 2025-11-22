@@ -2,52 +2,41 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Login.css';
 
-const LoginPage = () => {
-  const navigate = useNavigate();
-
-  const selectRole = (role) => {
-    localStorage.setItem('selectedRole', role);
-
-    if (role === 'student') {
-      navigate('/studentlogin');
-    } else if (role === 'manager') {
-      navigate('/managerlogin');
-    }
-  };
-
+export default function LoginPage() {
   return (
-    <div className="page-container">
-      <div className="signin-container">
-        <h1 className="main-title">BẠN LÀ?</h1>
+    <div className="login-page">
+      {/* Back button */}
+      <a href="/" className="back-btn">
+        <span className="arrow">←</span> Back
+      </a>
 
-        <div className="role-grid">
-          {/* Student Card */}
-          <div className="role-card" onClick={() => selectRole('student')}>
-            <div className="character-container">
-              <img
-                src="/images/student.png"
-                alt="Sinh viên"
-                className="character-image"
-              />
-            </div>
-            <button className="role-button">Sinh viên</button>
+      <div className="login-container">
+        {/* Mascot */}
+        <div className="mascot-wrapper">
+          <img 
+            src="/images/mascot.png" 
+            alt="BK Mascot" 
+            className="mascot-img"
+          />
+        </div>
+
+        {/* Login Card */}
+        <div className="login-card">
+          <h1>Log in using your account on:</h1>
+
+          <div className="login-options">
+            <button className="login-btn hcmut">
+              <img src="/images/hcmut-logo.png" alt="HCMUT" className="btn-icon" />
+              Tài khoản HCMUT (HCMUT account)
+            </button>
+
+            <button className="login-btn admin">
+              Admin
+            </button>
           </div>
 
-          {/* Manager Card */}
-          <div className="role-card" onClick={() => selectRole('manager')}>
-            <div className="character-container">
-              <img
-                src="/images/manager.png"
-                alt="Ban quản lý"
-                className="character-image"
-              />
-            </div>
-            <button className="role-button">Ban quản lý</button>
-          </div>
+          <a href="/forgot-password" className="forgot-link">Quên mật khẩu?</a>
         </div>
       </div>
-    </div>
-  );
-};
-
-export default LoginPage;
+    </div>);
+}
