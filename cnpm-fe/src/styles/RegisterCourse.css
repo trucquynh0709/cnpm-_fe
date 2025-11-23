@@ -1,13 +1,13 @@
 .dashboard {
   display: flex;
   min-height: 100vh;
-  background: linear-gradient(135deg, #e0e8f5 0%, #c9d9f0 50%, #d5e3fa 100%);
+  background: #bdd2ff;
 }
 
 /* Sidebar */
 .sidebar {
   width: 220px;
-  background: linear-gradient(180deg, #f5f8fc 0%, #e8eef7 100%);
+  background: linear-gradient(180deg, #f5f8fc 0%, #e4efff 100%);
   padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
@@ -23,13 +23,13 @@
 }
 
 .logo-bk {
-  color: #2563eb;
-  font-weight: 400;
+  color: #2659c6;
+  font-weight: bold;
 }
 
 .logo-text {
-  color: #0B1767;
-  font-weight: 700;
+  color: #000000;
+  font-weight: bold;
 }
 
 /* Navigation */
@@ -48,8 +48,8 @@
   text-decoration: none;
   color: #64748b;
   font-size: 0.9rem;
-  font-weight: 500;
   transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .nav-item:hover {
@@ -59,9 +59,9 @@
 }
 
 .nav-item.active {
-  background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+  background: linear-gradient(90deg, #2049A1 0%, #1341a3 51%, #0B1767 100%);
   color: #fff;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 4px 15px rgba(27, 77, 187, 0.4);
 }
 
 .nav-icon {
@@ -138,33 +138,9 @@
   flex: 1;
 }
 
-.register-btn-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.btn-register {
-  background: linear-gradient(90deg, #3b5998 0%, #4a6eb5 100%);
-  color: #fff;
-  border: none;
-  padding: 1rem 2.5rem;
-  border-radius: 0.75rem;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(59, 89, 152, 0.3);
-}
-
-.btn-register:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(59, 89, 152, 0.4);
-}
-
 /* Tutors Section */
 .tutors-section {
-  background: linear-gradient(145deg, #e5efff 0%, #d9e8fb 100%);
+  background: linear-gradient(180deg, #f5f8fc 0%, #e4efff 100%);
   border-radius: 1.5rem;
   padding: 2rem;
   box-shadow: 0 10px 40px rgba(0,0,0,0.08);
@@ -215,7 +191,7 @@
 
 .tutors-header h2 {
   font-size: 1.2rem;
-  font-weight: 700;
+  
   color: #0B1767;
 }
 
@@ -243,7 +219,7 @@
 }
 
 .page.active {
-  background: linear-gradient(135deg, #3b5998 0%, #4a6eb5 100%);
+  background: #0B1767;
   color: #fff;
   font-weight: 600;
 }
@@ -282,7 +258,7 @@
 }
 
 .tutor-card:hover {
-  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
   transform: translateY(-5px);
   border-color: transparent;
 }
@@ -293,30 +269,29 @@
   border-radius: 1rem;
   object-fit: cover;
   margin-bottom: 1.25rem;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .tutor-card h4 {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #0B1767;
+  color: #1B2559;
   margin-bottom: 1rem;
 }
 
 .btn-view {
-  background: linear-gradient(90deg, #3b5998 0%, #4a6eb5 100%);
+  background: linear-gradient(90deg, #2049A1 0%, #1341a3 51%, #0B1767 100%);
   color: #fff;
   border: none;
   padding: 0.65rem 1.5rem;
-  border-radius: 0.6rem;
-  font-size: 0.9rem;
-  font-weight: 500;
+  border-radius: 0.8rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 3px 10px rgba(59, 89, 152, 0.25);
+  box-shadow: 0 3px 10px rgba(67, 24, 255, 0.25);
 }
 
 .btn-view:hover {
+  background: linear-gradient(90deg, #2E63D8 0%, #1E52CA 50%, #152B8A 100%);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(59, 89, 152, 0.35);
+  box-shadow: 0 5px 15px rgba(24, 62, 255, 0.35);
 }

@@ -253,18 +253,6 @@ html, body {
   margin: 0 auto;
 }
 
-/* Badge */
-.tutors-badge {
-  display: inline-block;
-  background: #d9e4f5;
-  color: #3b5998;
-  padding: 0.5rem 1.25rem;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-}
-
 /* Grid */
 .tutors-grid {
   display: grid;
