@@ -41,19 +41,29 @@ export default function ProfileSetting() {
     <div className="profile-dashboard">
       {/* Sidebar */}
       <aside className="profile-sidebar">
-        <div className="profile-sidebar-item active">
-          <Settings size={24} color="#292D32" />
-        </div>
-        <div className="profile-sidebar-item">
-          <LayoutDashboard size={24} color="#292D32" />
-        </div>
-        <div className="profile-sidebar-item">
-          <History size={24} color="#292D32" />
-        </div>
-        <div className="profile-sidebar-item">
-          <CheckSquare size={24} color="#292D32" />
-        </div>
-      </aside>
+             
+              <div className="profile-sidebar-item active">
+                 <Link to = "/profilesetting">
+                <Settings size={24} color="#292D32" />
+                </Link>
+              </div>
+              
+              <div className="profile-sidebar-item">
+                <Link to = "/studentdashboard">
+                <LayoutDashboard size={24} color="#292D32" />
+                </Link>
+              </div>
+              <div className="profile-sidebar-item">
+                <Link to = "/studenthistory">
+                <History size={24} color="#292D32" />
+                </Link>
+              </div>
+              <div className="profile-sidebar-item">
+                <Link to = "/studentquizzes">
+                <CheckSquare size={24} color="#292D32" />
+                </Link>
+              </div>
+            </aside>
 
       {/* Main Content */}
       <main className="profile-main-content">

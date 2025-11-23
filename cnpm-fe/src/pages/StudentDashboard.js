@@ -4,56 +4,102 @@ import { Link } from "react-router-dom";
 import Swal from 'sweetalert2';
 import '../styles/StudentDashboard.css';
 import { Home,  ArrowRight, TrendingUp, Smile } from 'lucide-react';
-import { Settings, Clock,LayoutDashboard, User,History, CheckSquare, Search, Bell, Edit2, Mail, Plus , ArrowLeft} from 'lucide-react';
+import { Settings,ChevronRight, Calendar,CheckCircle2,Clock,LayoutDashboard, User,History, CheckSquare, Search, Bell, Edit2, Mail, Plus , ArrowLeft} from 'lucide-react';
 
-export default function StudentDashboard() {
-  const [formData, setFormData] = useState({
-    ho: '',
-    ten: '',
-    gioiTinh: '',
-    soDienThoai: '',
-    ngonNgu: '',
-    kyNang: ''
-  });
+const StudentDashboard = () => {
+  const [studyTime] = useState({ hours: 2, minutes: 20 });
+  
+  const weeklyData = [
+    { day: 'M', time: 0, label: 'M' },
+    { day: 'T', time: 2, label: 'T' },
+    { day: 'W', time: 3.5, label: 'W' },
+    { day: 'T', time: 3, label: 'T' },
+    { day: 'F', time: 0, label: 'F' },
+    { day: 'S', time: 0, label: 'S' },
+    { day: 'Today', time: 0, label: 'Today' }
+  ];
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+  const subjects = [
+{ name: 'XÁC SUẤT THỐNG KÊ', progress: 100, colorStart: '#314CFF', colorEnd: '#314CFF' },
+    { name: 'MÔ HÌNH HÓA TOÁN HỌC', progress: 80, colorStart: '#314CFF', colorEnd: '#7FA1FF' },
+    { name: 'GIẢI TÍCH 2', progress: 65, colorStart: '#314CFF', colorEnd: '#7FA1FF' },
+    { name: 'HỆ THỐNG SỐ', progress: 40, colorStart: '#314CFF', colorEnd: '#7FA1FF' }
+  ];
 
-  const handleSave = () => {
-    Swal.fire({
-      title: 'Thành công!',
-      text: 'Cập nhật thông tin thành công!',
-      icon: 'success',
-      confirmButtonText: 'Đóng',
-      confirmButtonColor: '#4182F9',
-      customClass: {
-        popup: 'profile-swal-popup',
-        title: 'profile-swal-title',
-        confirmButton: 'profile-swal-button'
-      }
-    });
-  };
+  const quizScores = [
+    { quiz: 1, score: null },
+    { quiz: 2, score: null },
+    { quiz: 3, score: null },
+    { quiz: 'Midterm', score: 6.8, label: 'Có tiến bộ' },
+    { quiz: 4, score: 8.5 },
+    { quiz: 5, score: null }
+  ];
+
+  const schedule = [
+    { id: 1, subject: 'Science', day: 14, time: '09:30 - 11:20', color: '#FFBABE', textColor: '#FF3C6A', startHour: 9.5, duration: 1.83 },
+    { id: 2, subject: 'Marketing', day: 16, time: '11:30 - 12:30', color: '#E6EFFF', textColor: '#394CFF', startHour: 11.5, duration: 1 },
+    { id: 3, subject: 'Javascript', day: 19, time: '12:00 - 13:40', color: '#FFE7BA', textColor: '#D78D03', startHour: 12, duration: 1.67 },
+    { id: 4, subject: 'Literature', day: 16, time: '14:00 - 15:45', color: '#E6EFFF', textColor: '#24B0C9', startHour: 14, duration: 1.75 },
+    { id: 5, subject: 'HTML', day: 17, time: '15:30 - 16:00', color: '#FFC9BE', textColor: '#FF6500', startHour: 15.5, duration: 0.5 }
+  ];
+
+  const teammates = [
+    {
+      id: 1,
+      name: 'Sarah Chen',
+      avatar: 'https://i.pravatar.cc/150?img=5',
+      hasNotification: true,
+      bgColor: '#E6EFFF'
+    },
+    {
+      id: 2,
+      name: 'Alex Rodriguez',
+      avatar: 'https://i.pravatar.cc/150?img=12',
+      hasNotification: true,
+      bgColor: '#E6EFFF'
+    },
+    {
+      id: 3,
+      name: 'Marcus Johnson',
+      avatar: 'https://i.pravatar.cc/150?img=15',
+      hasNotification: false,
+      bgColor: 'transparent'
+    },
+    {
+      id: 4,
+      name: 'David Kim',
+      avatar: 'https://i.pravatar.cc/150?img=33',
+      hasNotification: false,
+      bgColor: 'transparent'
+    }
+  ];
+
 
   return (
     <div className="profile-dashboard">
       {/* Sidebar */}
       <aside className="profile-sidebar">
-        <div className="profile-sidebar-item active">
+       
+        <div className="profile-sidebar-item">
+           <Link to = "/profilesetting">
           <Settings size={24} color="#292D32" />
+          </Link>
         </div>
-        <div className="profile-sidebar-item">
+        
+        <div className="profile-sidebar-item active">
+          <Link to = "/studentdashboard">
           <LayoutDashboard size={24} color="#292D32" />
+          </Link>
         </div>
         <div className="profile-sidebar-item">
+          <Link to = "/studenthistory">
           <History size={24} color="#292D32" />
+          </Link>
         </div>
         <div className="profile-sidebar-item">
+          <Link to = "/studentquizzes">
           <CheckSquare size={24} color="#292D32" />
+          </Link>
         </div>
       </aside>
 
@@ -79,142 +125,216 @@ export default function StudentDashboard() {
 
         {/* Content Area */}
         <div className="profile-content-area">
-            
-          <div className="profile-container">
-            {/* Profile Header Section */}
             <img className="profile-decor" src="/images/profile-decor.png"></img>
-            <div className="profile-header-section">
-                
-              <div className="profile-avatar-container">
-                
-                <img 
-                  src="/images/avatar.jpg" 
-                  alt="Huỳnh Ngọc Trúc Lu" 
-                  className="profile-avatar-large"
-                />
-                <button className="profile-edit-avatar">
-                  <Edit2 size={16} color="white" />
-                </button>
+        <div className="dashboard-container">
+      <div className="bento-grid">
+        
+        {/* Subject Progress Card */}
+        <div className="bento-card subject-progress">
+          <h2 className="card-title">Tiến độ từng môn</h2>
+          <div className="subject-list">
+            {subjects.map((subject, idx) => (
+              <div key={idx} className="subject-item">
+                <div className="subject-header">
+                  <span className="subject-name" style={{ color: subject.colorStart }}>
+                    {subject.name}
+                  </span>
+                  <span className="subject-percentage">{subject.progress}%</span>
+                </div>
+                <div className="progress-bar-bg">
+                  <div 
+                    className="progress-bar-fill"
+                    style={{
+                      width: `${subject.progress}%`,
+                      background: `linear-gradient(90deg, ${subject.colorStart}, ${subject.colorEnd})`
+                    }}
+                  />
+                </div>
               </div>
-              <div className="profile-user-info">
-                <h2 className="profile-user-name">Huỳnh Ngọc Trúc Lu</h2>
-                <p className="profile-user-email">manifest@hcmut.edu.vn</p>
-              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Study Time Card */}
+        <div className="bento-card study-time">
+          <div className="study-time-header">
+            <div className="time-display">
+              <h1 className="time-text">
+                {studyTime.hours}h {studyTime.minutes}m
+              </h1>
+              <TrendingUp className="trending-icon" />
             </div>
+            <p className="time-subtitle">Thời gian học trung bình một ngày</p>
+          </div>
 
-            {/* Form Section */}
-            <div className="profile-form-section">
-              <div className="profile-form-row">
-                <div className="profile-form-group">
-                  <label className="profile-label">Họ</label>
-                  <input
-                    type="text"
-                    name="ho"
-                    placeholder="Họ"
-                    className="profile-input"
-                    value={formData.ho}
-                    onChange={handleInputChange}
+          <div className="weekly-chart">
+            {weeklyData.map((day, idx) => (
+              <div key={idx} className="chart-bar">
+                <div className="bar-container">
+                  <div 
+                    className="bar-fill"
+                    style={{ 
+                      height: `${(day.time / 4) * 100}%`,
+                      backgroundColor: day.time > 0 ? '#314CFF' : 'transparent'
+                    }}
                   />
                 </div>
-                <div className="profile-form-group">
-                  <label className="profile-label">Tên</label>
-                  <input
-                    type="text"
-                    name="ten"
-                    placeholder="Tên"
-                    className="profile-input"
-                    value={formData.ten}
-                    onChange={handleInputChange}
+                <span className="bar-label">{day.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="notification-card">
+            <div className="notification-content">
+              <h3 className="notification-title">Điều chỉnh thông báo</h3>
+              <p className="notification-desc">Cài đặt thông báo lịch học, thời hạn bài tập</p>
+            </div>
+            <ChevronRight className="notification-icon" />
+          </div>
+        </div>
+
+        {/* Quiz Score Card */}
+        <div className="bento-card quiz-score">
+          <div className="quiz-header">
+            <h2 className="card-title">Giải tích 2</h2>
+            <button className="smile-button">☺</button>
+          </div>
+
+          <div className="quiz-labels">
+            {quizScores.map((item, idx) => (
+              <div key={idx} className="quiz-label-item">
+                <div className="quiz-label-text">Quiz</div>
+                <div className="quiz-label-number">{item.quiz}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="chart-container">
+            <svg className="line-chart" viewBox="0 0 400 100" preserveAspectRatio="none">
+              <polyline
+                fill="none"
+                stroke="#314CFF"
+                strokeWidth="2"
+                points="20,80 90,40 155,20 240,30 320,10 400,90"
+              />
+              <circle cx="240" cy="30" r="4" fill="#314CFF" />
+              <circle cx="320" cy="10" r="4" fill="#314CFF" />
+              <polyline
+                fill="none"
+                stroke="#314CFF"
+                strokeWidth="2"
+                strokeDasharray="5,5"
+                opacity="0.5"
+                points="320,10 400,50"
+              />
+            </svg>
+            
+            <div className="score-label">
+              <div className="score-value">6.8</div>
+              <div className="score-text">Có tiến bộ</div>
+            </div>
+          </div>
+
+          <div className="achievement-card">
+            <div className="achievement-icon">
+              <CheckCircle2 className="check-icon" />
+            </div>
+            <div className="achievement-content">
+              <h3 className="achievement-title">Làm tốt lắm !</h3>
+              <p className="achievement-desc">Cố gắng phát huy nhé</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bento-card team-members feedback-card">
+          <h2 className="feedback-title">Nhận xét</h2>
+          <p className="feedback-subtitle">2 nhận xét gần đây</p>
+
+          <div className="teammates-grid">
+            {teammates.map((teammate) => (
+              <div 
+                key={teammate.id} 
+                className="teammate-wrapper"
+                style={{ backgroundColor: teammate.bgColor }}
+              >
+                <div className="avatar-container">
+                  <img 
+                    src={teammate.avatar} 
+                    alt={teammate.name}
+                    className="teammate-avatar"
                   />
+                  {teammate.hasNotification && (
+                    <span className="notification-dot"></span>
+                  )}
                 </div>
               </div>
+            ))}
+          </div>
 
-              <div className="profile-form-row">
-                <div className="profile-form-group">
-                  <label className="profile-label">Giới tính</label>
-                  <select
-                    name="gioiTinh"
-                    className="profile-select"
-                    value={formData.gioiTinh}
-                    onChange={handleInputChange}
-                  >
-                    <option value="">Nam/Nữ</option>
-                    <option value="nam">Nam</option>
-                    <option value="nu">Nữ</option>
-                    <option value="khac">Khác</option>
-                  </select>
-                </div>
-                <div className="profile-form-group">
-                  <label className="profile-label">Số điện thoại</label>
-                  <input
-                    type="tel"
-                    name="soDienThoai"
-                    placeholder="Số điện thoại"
-                    className="profile-input"
-                    value={formData.soDienThoai}
-                    onChange={handleInputChange}
-                  />
-                </div>
-              </div>
+          <a href="#" className="view-all-link">
+            Toàn bộ nhận xét →
+          </a>
+        </div>
 
-              <div className="profile-form-row">
-                <div className="profile-form-group">
-                  <label className="profile-label">Ngôn ngữ</label>
-                  <select
-                    name="ngonNgu"
-                    className="profile-select"
-                    value={formData.ngonNgu}
-                    onChange={handleInputChange}
-                  >
-                    <option value="">Chọn ngôn ngữ</option>
-                    <option value="vi">Tiếng Việt</option>
-                    <option value="en">English</option>
-                    <option value="fr">Français</option>
-                  </select>
-                </div>
-                <div className="profile-form-group">
-                  <label className="profile-label">Kỹ năng</label>
-                  <select
-                    name="kyNang"
-                    className="profile-select"
-                    value={formData.kyNang}
-                    onChange={handleInputChange}
-                  >
-                    <option value="">Chọn kỹ năng</option>
-                    <option value="coding">Lập trình</option>
-                    <option value="design">Thiết kế</option>
-                    <option value="marketing">Marketing</option>
-                  </select>
-                </div>
-              </div>
-
-              {/* Email Account Section */}
-              <div className="profile-email-section">
-                <h3 className="profile-section-title">Tài khoản email</h3>
-                <div className="profile-email-item">
-                  <div className="profile-email-icon">
-                    <Mail size={24} color="#4182F9" />
+        {/* Weekly Schedule Card */}
+        <div className="bento-card weekly-schedule">
+          <h2 className="card-title">Lịch học tuần này</h2>
+          <div className="schedule-wrapper">
+            <div className="schedule-content">
+              <div className="schedule-header">
+                <div className="header-week">Week</div>
+                {[14, 15, 16, 17, 18, 19, 20].map((day, idx) => (
+                  <div key={day} className="header-day">
+                    <div className="day-number">{day}</div>
+                    <div className="day-name">
+                      {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'][idx]}
+                    </div>
                   </div>
-                  <div className="profile-email-info">
-                    <p className="profile-email-address">manifest@hcmut.edu.vn</p>
-                    <p className="profile-email-time">1 month ago</p>
-                  </div>
-                </div>
-                <button className="profile-add-email-btn">
-                  <Plus size={12} /> Thêm tài khoản Email
-                </button>
+                ))}
               </div>
 
-              {/* Save Button */}
-              <div className="profile-save-container">
-                <button className="profile-save-btn" onClick={handleSave}>
-                  Lưu thay đổi
-                </button>
+              <div className="schedule-grid">
+                {[...Array(11)].map((_, idx) => {
+                  const hour = 9 + idx;
+                  return (
+                    <div key={idx} className="time-row">
+                      <div className="time-label">{hour}:00</div>
+                    </div>
+                  );
+                })}
+
+                {schedule.map(item => (
+                  <div
+                    key={item.id}
+                    className="schedule-item"
+                    style={{
+                      backgroundColor: item.color,
+                      left: `${((item.day - 14) + 1) * 12.5}%`,
+                      top: `${(item.startHour - 9) * 48}px`,
+                      height: `${item.duration * 48}px`
+                    }}
+                  >
+                    <div className="schedule-subject" style={{ color: item.textColor }}>
+                      {item.subject}
+                    </div>
+                    <div className="schedule-time">
+                      <Clock className="clock-icon" style={{ color: item.textColor }} />
+                      <span style={{ color: item.textColor }}>{item.time}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
+
+      </div>
+    </div>
+
+          </div>
       </main>
     </div>
   );
 }
+
+export default StudentDashboard;

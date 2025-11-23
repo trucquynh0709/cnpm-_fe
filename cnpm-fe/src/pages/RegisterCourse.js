@@ -1,8 +1,11 @@
 import '../styles/RegisterCourse.css';
 import '../styles/TutorProfile.css';
 import { Search, Menu, Bell, User, BookOpen, Users, Calendar, Settings, ArrowLeft } from 'lucide-react';
+import { useState } from 'react';
 import { Link } from "react-router-dom";
+import ProfileModal from '../components/ProfileModal';
 export default function RegisterCourse() {
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   return (
     <div className="dashboard">
       {/* Sidebar */}
@@ -38,7 +41,8 @@ export default function RegisterCourse() {
             <button className="tutor-profile-header-btn">
               <Bell size={20} />
             </button>
-            <button className="tutor-profile-header-btn">
+            <button className="tutor-profile-header-btn"  onClick={() => setIsProfileModalOpen(true)}>
+                
               <User size={20} />
             </button>
           </div>
@@ -110,6 +114,10 @@ export default function RegisterCourse() {
           </div>
         </div>
       </main>
+       <ProfileModal 
+        isOpen={isProfileModalOpen} 
+        onClose={() => setIsProfileModalOpen(false)} 
+      />
     </div>
   );
 }

@@ -2,9 +2,10 @@ import '../styles/TutorProfile.css';
 import React, { useState } from 'react';
 import { Search, Menu, Bell, User, BookOpen, Users, Calendar, Settings, ArrowLeft } from 'lucide-react';
 import { Link } from "react-router-dom";
+import ProfileModal from '../components/ProfileModal';
 const TutorProfile = () => {
   const [activePage, setActivePage] = useState(1);
-
+ const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   // Dữ liệu giảng viên (có thể nhận từ props hoặc API)
   const tutor = {
     name: 'Trần Nguyên Phú N',
@@ -94,7 +95,7 @@ const TutorProfile = () => {
             <button className="tutor-profile-header-btn">
               <Bell size={20} />
             </button>
-            <button className="tutor-profile-header-btn">
+            <button className="tutor-profile-header-btn" onClick={() => setIsProfileModalOpen(true)}>
               <User size={20} />
             </button>
           </div>
@@ -181,7 +182,10 @@ const TutorProfile = () => {
           </div>
         </div>
       </div>
-
+             <ProfileModal 
+                    isOpen={isProfileModalOpen} 
+                    onClose={() => setIsProfileModalOpen(false)} 
+                  />
     </div>
   );
 };

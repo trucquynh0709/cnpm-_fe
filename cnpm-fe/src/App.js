@@ -8,6 +8,8 @@ import TutorProfile from "./pages/TutorProfile";
 import ClassDetail from "./pages/ClassDetail";
 import ProfileSetting from "./pages/ProfileSetting";
 import StudentDashboard from "./pages/StudentDashboard";
+import StudentHistory from "./pages/StudentHistory";
+import StudentQuizzes from "./pages/StudentQuizzes";
 
 function App() {
   console.log("App rendered");
@@ -20,7 +22,10 @@ function App() {
         <Route path="/tutorprofile" element={<TutorProfile />} />
         <Route path="/classdetail" element={<ClassDetail />} />
         <Route path="/profilesetting" element={<ProfileSetting />} />
-         <Route path="/studentdashboard" element={<StudentDashboard />} />
+        <Route path="/studentdashboard" element={<StudentDashboard />} />
+        <Route path="/studenthistory" element={<StudentHistory />} />
+        <Route path="/studentquizzes" element={<StudentQuizzes />} />
+        
       </Routes>
     </Layout>
   );

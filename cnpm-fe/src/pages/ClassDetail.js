@@ -4,9 +4,10 @@ import '../styles/TutorProfile.css';
 import { Link } from "react-router-dom";
 import { Search, ArrowLeft, Menu, Bell, User, BookOpen, Users, Calendar, Settings } from 'lucide-react';
 import Swal from 'sweetalert2';
-
+import ProfileModal from '../components/ProfileModal';
 export default function ClassDetail() {
   const [activeChapter, setActiveChapter] = useState(null);
+   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
  const handleRegister = () => {
     Swal.fire({
       title: 'Thành công!',
@@ -71,7 +72,7 @@ export default function ClassDetail() {
                 <button className="tutor-profile-header-btn">
                   <Bell size={20} />
                 </button>
-                <button className="tutor-profile-header-btn">
+                <button className="tutor-profile-header-btn" onClick={() => setIsProfileModalOpen(true)}>
                   <User size={20} />
                 </button>
               </div>
@@ -130,7 +131,10 @@ export default function ClassDetail() {
             </div>
           </div>
         </div>
-      
+      <ProfileModal 
+              isOpen={isProfileModalOpen} 
+              onClose={() => setIsProfileModalOpen(false)} 
+            />
     </div>
   );
 }

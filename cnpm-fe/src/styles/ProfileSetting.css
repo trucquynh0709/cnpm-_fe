@@ -164,6 +164,7 @@ body{
   flex: 1;
   padding: 2rem;
   overflow-y: auto;
+  overflow-x: hidden; /* prevent horizontal scroll from wide decorative/banner elements */
   background: #F2F2F2;
 }
 
@@ -179,11 +180,14 @@ body{
 /* Decorative banner at top of profile card */
 .profile-decor {
   display: block;
-  width: calc(100% + 6rem); /* extend to cover container padding */
-  margin: -1rem -3rem 1.5rem -3rem; /* pull to container edges (negate container padding) */
+  /* align extension with the content padding (2rem), avoid overflowing page */
+  width: calc(100% + 4rem);
+  margin: -2rem -2rem 1.5rem -2rem; /* pull to container edges (negate container padding) */
   height: clamp(88px, 10vw, 140px);
   object-fit: cover;
   border-radius: 12px 12px 0 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Profile Header Section */
