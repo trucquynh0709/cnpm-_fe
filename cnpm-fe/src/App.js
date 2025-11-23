@@ -10,6 +10,11 @@ import ProfileSetting from "./pages/ProfileSetting";
 import StudentDashboard from "./pages/StudentDashboard";
 import StudentHistory from "./pages/StudentHistory";
 import StudentQuizzes from "./pages/StudentQuizzes";
+import CoordinatorDashboard from "./pages/CoordinatorDashboard";
+import CreateClass from "./pages/CreateClass";
+import ClassAdjust from "./pages/ClassAdjust";
+import CourseSite from "./pages/CourseSite";
+import AddSession from "./pages/AddSession";
 
 function App() {
   console.log("App rendered");
