@@ -50,7 +50,7 @@ const Footer = () => {
             <p>Trần Nguyễn Phú Nghĩa - 2312284</p>
             <p>Nguyễn Ngọc Trúc Quỳnh - 2312912</p>
             <p>Nguyễn Tấn Lộc</p>
-            <p>Phan Châu Nguyên</p>
+            <p>Phan Châu Nguyên - 2312376</p>
             <p>Nguyễn Long Toàn</p>
            
           </div>

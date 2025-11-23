@@ -3,6 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Login.css';
 
 export default function LoginPage() {
+    const navigate = useNavigate(); 
+
+  
+    const handleCoordinatorLogin = () => {
+    navigate('/coordinator-dashboard');
+  };
+  
   return (
     <div className="login-page">
       {/* Back button */}
@@ -30,7 +37,7 @@ export default function LoginPage() {
               Tài khoản HCMUT (HCMUT account)
             </a>
 
-            <button className="login-btn admin">
+            <button className="login-btn admin" onClick={handleCoordinatorLogin}>
               Admin
             </button>
           </div>

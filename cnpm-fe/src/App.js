@@ -10,6 +10,11 @@ import ProfileSetting from "./pages/ProfileSetting";
 import StudentDashboard from "./pages/StudentDashboard";
 import StudentHistory from "./pages/StudentHistory";
 import StudentQuizzes from "./pages/StudentQuizzes";
+import CoordinatorDashboard from "./pages/CoordinatorDashboard";
+import CreateClass from "./pages/CreateClass";
+import ClassAdjust from "./pages/ClassAdjust";
+import CourseSite from "./pages/CourseSite";
+import AddSession from "./pages/AddSession";
 
 function App() {
   console.log("App rendered");
@@ -19,6 +24,15 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/registercourse" element={<RegisterCourse />} />
+
+
+        <Route path="/coordinator-dashboard" element={<CoordinatorDashboard />} />
+        <Route path="/create-class" element={<CreateClass />} />
+        <Route path="/class-adjust" element={<ClassAdjust />} />
+        <Route path="/course-site" element={<CourseSite />} />
+        <Route path="/add-session" element={<AddSession />} />
+
+
         <Route path="/tutorprofile" element={<TutorProfile />} />
         <Route path="/classdetail" element={<ClassDetail />} />
         <Route path="/profilesetting" element={<ProfileSetting />} />
