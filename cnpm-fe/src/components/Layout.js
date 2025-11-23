@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { Toaster } from 'react-hot-toast';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -17,6 +18,7 @@ const Layout = ({ children }) => {
       {showNavbar && <Navbar />}
       {children}
       {showFooter && <Footer />}
+      <Toaster />
     </div>
   );
 };

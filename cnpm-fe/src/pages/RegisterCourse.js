@@ -1,6 +1,11 @@
 import '../styles/RegisterCourse.css';
-
+import '../styles/TutorProfile.css';
+import { Search, Menu, Bell, User, BookOpen, Users, Calendar, Settings, ArrowLeft } from 'lucide-react';
+import { useState } from 'react';
+import { Link } from "react-router-dom";
+import ProfileModal from '../components/ProfileModal';
 export default function RegisterCourse() {
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   return (
     <div className="dashboard">
       {/* Sidebar */}
@@ -18,21 +23,30 @@ export default function RegisterCourse() {
         </nav>
 
         <div className="nav-bottom">
-          <a href="/cai-dat" className="nav-item">Cài đặt</a>
+          <a href="/profilesetting" className="nav-item">Cài đặt</a>
         </div>
       </aside>
 
       {/* Main Content */}
       <main className="main-content">
         {/* Header */}
-        <header className="header">
-          <div className="header-left"></div>
-          <div className="header-right">
-            <div className="avatar-small">
-              <img src="https://i.pravatar.cc/40?img=11" alt="User" />
-            </div>
+         <div className="tutor-profile-header">
+          <Link to="/" className="tutor-profile-header-btn" aria-label="Quay lại">
+            <ArrowLeft size={20} />
+          </Link>
+          <div className="tutor-profile-header-actions">
+            <button className="tutor-profile-header-btn">
+              <Search size={20} />
+            </button>
+            <button className="tutor-profile-header-btn">
+              <Bell size={20} />
+            </button>
+            <button className="tutor-profile-header-btn"  onClick={() => setIsProfileModalOpen(true)}>
+                
+              <User size={20} />
+            </button>
           </div>
-        </header>
+        </div>
 
         {/* Content Area */}
         <div className="content-area">
@@ -62,7 +76,9 @@ export default function RegisterCourse() {
               <div className="tutor-card">
                 <img src="https://i.pravatar.cc/150?img=12" alt="ThS. Trần Phú N" />
                 <h4>ThS. Trần Phú N</h4>
+                 <Link to="/tutorprofile">
                 <button className="btn-view">Xem khóa học</button>
+                </Link>
               </div>
 
               <div className="tutor-card">
@@ -98,6 +114,10 @@ export default function RegisterCourse() {
           </div>
         </div>
       </main>
+       <ProfileModal 
+        isOpen={isProfileModalOpen} 
+        onClose={() => setIsProfileModalOpen(false)} 
+      />
     </div>
   );
 }
