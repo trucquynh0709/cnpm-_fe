@@ -1,0 +1,401 @@
+/* Main Layout */
+.classdetail-dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: #bdd2ff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Sidebar */
+.classdetail-sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #f5f8fc 0%, #e4efff 100%);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.classdetail-logo {
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.classdetail-logo-bk {
+  color: #2659c6;
+}
+
+.classdetail-logo-text {
+  color: #000000;
+}
+
+.classdetail-nav-menu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.classdetail-nav-item {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #64748b;
+  text-decoration: none;
+  border-radius: 0.75rem;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+}
+
+.classdetail-nav-item:hover {
+  background: rgba(38, 89, 198, 0.1);
+  color: #2659c6;
+}
+
+.classdetail-nav-item.classdetail-active {
+  background: linear-gradient(90deg, #2049A1 0%, #1341a3 51%, #0B1767 100%);
+  color: #fff;
+  font-weight: 500;
+}
+
+.classdetail-nav-bottom {
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+}
+
+/* Main Content */
+.classdetail-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.classdetail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(180deg, #f5f8fc 0%, #e4efff 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.classdetail-header-left {
+  flex: 1;
+}
+
+.classdetail-search-bar-header {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 2rem;
+  max-width: 400px;
+  box-shadow: 0 2px 8px rgba(11, 23, 103, 0.08);
+}
+
+.classdetail-search-icon {
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.classdetail-search-bar-header input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 0.95rem;
+  color: #1B2559;
+}
+
+.classdetail-search-bar-header input::placeholder {
+  color: #64748b;
+}
+
+.classdetail-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.classdetail-avatar-small {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #2659c6;
+}
+
+.classdetail-avatar-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Content Area */
+.classdetail-content-area {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.classdetail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.classdetail-hero-section {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(11, 23, 103, 0.08);
+  position: relative;
+}
+
+.classdetail-back-button {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(90deg, #2049A1 0%, #1341a3 51%, #0B1767 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(11, 23, 103, 0.2);
+}
+
+.classdetail-back-button:hover {
+  background: linear-gradient(90deg, #2E63D8 0%, #1E52CA 50%, #152B8A 100%);
+  transform: scale(1.05);
+}
+
+.classdetail-word-cloud {
+  width: 100%;
+  height: 300px;          /* tăng chiều cao cho ảnh */
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.classdetail-word-cloud img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* luôn fill vừa đẹp */
+  display: block;
+}
+
+.classdetail-course-title {
+  font-size: 2rem;
+  color: #0B1767;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.classdetail-course-instructor {
+  text-align: center;
+  color: #64748b;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.classdetail-course-instructor strong {
+  color: #1B2559;
+}
+
+.classdetail-btn-register {
+  display: block;
+  margin: 0 auto;
+  padding: 0.875rem 3rem;
+  background: linear-gradient(90deg, #2049A1 0%, #1341a3 51%, #0B1767 100%);
+  color: white;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(11, 23, 103, 0.25);
+}
+
+.classdetail-btn-register:hover {
+  background: linear-gradient(90deg, #2E63D8 0%, #1E52CA 50%, #152B8A 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(11, 23, 103, 0.3);
+}
+
+.classdetail-swal-popup {
+  border-radius: 1.5rem !important;
+  padding: 2rem !important;
+  box-shadow: 0 8px 32px rgba(11, 23, 103, 0.2) !important;
+}
+
+.classdetail-swal-title {
+  color: #0B1767 !important;
+  font-size: 1.75rem !important;
+  font-weight: 700 !important;
+}
+
+.classdetail-swal-button {
+  background: linear-gradient(90deg, #2049A1 0%, #1341a3 51%, #0B1767 100%) !important;
+  border-radius: 2rem !important;
+  padding: 0.75rem 2.5rem !important;
+  font-weight: 600 !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(11, 23, 103, 0.25) !important;
+  transition: all 0.3s !important;
+}
+
+.classdetail-swal-button:hover {
+  background: linear-gradient(90deg, #2E63D8 0%, #1E52CA 50%, #152B8A 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(11, 23, 103, 0.3) !important;
+}
+
+/* Detail Grid */
+.classdetail-detail-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+/* Course Info Card */
+.classdetail-course-info-card {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(11, 23, 103, 0.08);
+}
+
+.classdetail-section-title {
+  color: #0B1767;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
+.classdetail-section-title:first-child {
+  margin-top: 0;
+}
+
+.classdetail-section-text {
+  color: #1B2559;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.classdetail-course-description-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.classdetail-course-description-list li {
+  color: #1B2559;
+  line-height: 1.8;
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.classdetail-course-description-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #2659c6;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Chapters Card */
+.classdetail-chapters-card {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(11, 23, 103, 0.08);
+}
+
+.classdetail-chapters-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.classdetail-chapter-item {
+  padding: 1rem 1.25rem;
+  background: linear-gradient(180deg, #f5f8fc 0%, #e4efff 100%);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+}
+
+.classdetail-chapter-item:hover {
+  border-color: #2659c6;
+  transform: translateX(4px);
+}
+
+.classdetail-chapter-item.classdetail-chapter-active {
+  background: linear-gradient(90deg, #2049A1 0%, #1341a3 51%, #0B1767 100%);
+  color: white;
+}
+
+.classdetail-chapter-title {
+  font-weight: 600;
+  color: inherit;
+}
+
+.classdetail-chapter-subtitle {
+  color: inherit;
+  opacity: 0.9;
+}
+
+.classdetail-chapter-item:not(.classdetail-chapter-active) .classdetail-chapter-title {
+  color: #0B1767;
+}
+
+.classdetail-chapter-item:not(.classdetail-chapter-active) .classdetail-chapter-subtitle {
+  color: #64748b;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .classdetail-detail-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .classdetail-sidebar {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .classdetail-sidebar {
+    display: none;
+  }
+  
+  .classdetail-content-area {
+    padding: 1rem;
+  }
+  
+  .classdetail-hero-section {
+    padding: 1.5rem;
+  }
+  
+  .classdetail-course-title {
+    font-size: 1.5rem;
+  }
+  
+  .classdetail-word-cloud {
+    padding: 1rem;
+  }
+}

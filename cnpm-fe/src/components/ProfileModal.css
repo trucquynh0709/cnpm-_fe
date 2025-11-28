@@ -1,0 +1,364 @@
+/* ===== OVERLAY ===== */
+.profile-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== MODAL ===== */
+.profile-modal {
+  background-color: white;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 420px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===== HEADER ===== */
+.profile-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.profile-modal-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.close-btn:hover {
+  background-color: #f5f5f5;
+  color: #1a1a1a;
+}
+
+/* ===== PROFILE INFO SECTION ===== */
+.profile-info-section {
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+}
+
+/* Avatar with Progress Ring */
+.profile-avatar-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 16px;
+}
+
+.profile-progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120px;
+  height: 120px;
+}
+
+.profile-avatar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 4px solid white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Edit Button */
+.edit-profile-btn {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translateX(26px);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #666;
+}
+
+.edit-profile-btn:hover {
+  background-color: #f5f5f5;
+  border-color: #3b82f6;
+  color: #3b82f6;
+}
+
+/* Profile Details */
+.profile-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+}
+
+.profile-gpa {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f59e0b;
+  margin-bottom: 8px;
+}
+
+.profile-major {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 12px;
+}
+
+.profile-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background-color: #dbeafe;
+  color: #1e40af;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* ===== FOLLOWING SECTION ===== */
+.following-section {
+  padding: 0 24px 24px;
+}
+
+.following-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.following-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.add-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #666;
+}
+
+.add-btn:hover {
+  background-color: #e0e0e0;
+  color: #1a1a1a;
+}
+
+/* Following List */
+.following-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.following-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: #fafafa;
+  border-radius: 12px;
+  transition: all 0.2s;
+}
+
+.following-item:hover {
+  background-color: #f0f0f0;
+}
+
+.following-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.following-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.following-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.following-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.following-role {
+  font-size: 12px;
+  color: #999;
+}
+
+/* Follow Button */
+.follow-btn {
+  padding: 8px 20px;
+  background-color: #2049A1;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.follow-btn:hover {
+  background-color: #2563eb;
+  transform: scale(1.05);
+}
+
+.follow-btn:active {
+  transform: scale(0.98);
+}
+
+/* View All Button */
+.view-all-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #b6cdffd7;
+  color: #2049A1;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.view-all-btn:hover {
+  background-color: #dbeafe;
+}
+
+/* ===== SCROLLBAR ===== */
+.profile-modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.profile-modal::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.profile-modal::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.profile-modal::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .profile-modal {
+    width: 95%;
+    max-height: 95vh;
+  }
+
+  .profile-modal-header {
+    padding: 20px 20px 12px;
+  }
+
+  .profile-info-section {
+    padding: 24px 20px;
+  }
+
+  .following-section {
+    padding: 0 20px 20px;
+  }
+
+  .profile-name {
+    font-size: 18px;
+  }
+
+  .following-name {
+    font-size: 13px;
+  }
+}

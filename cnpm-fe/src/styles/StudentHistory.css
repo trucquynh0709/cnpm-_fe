@@ -1,0 +1,159 @@
+.history-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: #f5f5f5;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.header-icon {
+  width: 28px;
+  height: 28px;
+  color: #1a1a1a;
+}
+
+.history-header h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.table-wrapper {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.history-table thead {
+  background-color: #fafafa;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.history-table th {
+  padding: 16px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  color: #666;
+  white-space: nowrap;
+}
+
+.history-table th {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sort-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
+  color: #999;
+}
+
+.history-table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.history-table tbody tr:hover {
+  background-color: #fafafa;
+}
+
+.history-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.history-table td {
+  padding: 16px;
+  font-size: 15px;
+  color: #333;
+}
+
+.subject-name {
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.rating {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.rating-good {
+  background-color: #d4f4dd;
+  color: #1a7f37;
+}
+
+.rating-poor {
+  background-color: #ffd4d4;
+  color: #d73a49;
+}
+
+.video-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.video-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.video-icon {
+  width: 20px;
+  height: 20px;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .history-table {
+    font-size: 13px;
+  }
+  
+  .history-table th,
+  .history-table td {
+    padding: 12px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .history-container {
+    padding: 16px;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .history-table {
+    min-width: 800px;
+  }
+}

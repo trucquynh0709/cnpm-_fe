@@ -1,0 +1,696 @@
+/* studentdashboard.css */
+body{
+  overflow-x: hidden;
+}
+
+
+.dashboard-container {
+  min-height: 100vh;
+  background: #F5F5F5;
+  padding: 24px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Bento Grid Layout */
+.bento-grid {
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+/* Bento Card Base Styles */
+.bento-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.bento-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Title */
+.card-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #3b3b3b;
+  margin-bottom: 16px;
+}
+
+/* Subject Progress Card - 3 columns, 2 rows */
+.subject-progress {
+  grid-column: span 3;
+  grid-row: span 2;
+  max-width: 300px;
+  
+}
+
+.subject-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.subject-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subject-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subject-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.subject-percentage {
+  font-size: 12px;
+  color: #666;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 16px;
+  background: #F0F2F7; /* slightly lighter track */
+  border-radius: 999px; /* pill */
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.36s cubic-bezier(.2,.9,.2,1), background 0.2s;
+  box-shadow: inset 0 -4px 8px rgba(0,0,0,0.06);
+}
+
+/* Study Time Card - 6 columns, 4 rows */
+.study-time {
+  grid-column: span 5;
+  grid-row: span 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.study-time-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.time-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.time-text {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.trending-icon {
+  color: #314CFF;
+  width: 32px;
+  height: 32px;
+}
+
+.time-subtitle {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Weekly Chart */
+.weekly-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+  height: 180px;
+  margin-bottom: 24px;
+  padding: 0 8px;
+}
+
+.chart-bar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.bar-container {
+  width: 100%;
+  background: #E5E5E5;
+  border-radius: 8px;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.bar-fill {
+  width: 100%;
+  border-radius: 8px;
+  transition: height 0.3s ease;
+}
+
+.bar-label {
+  font-size: 12px;
+  color: #666;
+  margin-top: 8px;
+}
+
+/* Notification Card */
+.notification-card {
+  background: #F8F8F8;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: auto;
+}
+
+.notification-card:hover {
+  background: #F0F0F0;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.notification-desc {
+  font-size: 12px;
+  color: #666;
+}
+
+.notification-icon {
+  width: 20px;
+  height: 20px;
+  color: #999;
+}
+
+/* Quiz Score Card - 3 columns, 4 rows */
+.quiz-score {
+  grid-column: span 4;
+  grid-row: span 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.quiz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.smile-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #E5E5E5;
+  background: white;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.smile-button:hover {
+  background: #F8F8F8;
+}
+
+/* Quiz Labels */
+.quiz-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.quiz-label-item {
+  text-align: center;
+  font-size: 11px;
+  color: #666;
+}
+
+.quiz-label-text {
+  font-weight: 500;
+}
+
+.quiz-label-number {
+  margin-top: 2px;
+}
+
+/* Chart Container */
+.chart-container {
+  position: relative;
+  height: 120px;
+  margin-bottom: 24px;
+}
+
+.line-chart {
+  width: 100%;
+  height: 100%;
+}
+
+.score-label {
+  position: absolute;
+  left: 70%;
+  top: 5%;
+  background: white;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.score-value {
+  font-weight: 700;
+  color: #314CFF;
+  font-size: 14px;
+}
+
+.score-text {
+  color: #666;
+  margin-top: 2px;
+}
+
+/* Achievement Card */
+.achievement-card {
+  background: #E6EFFF;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.achievement-icon {
+  width: 40px;
+  height: 40px;
+  background: #314CFF;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.check-icon {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.achievement-content {
+  flex: 1;
+}
+
+.achievement-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3f3f3f;
+  margin-bottom: 4px;
+}
+
+.achievement-desc {
+  font-size: 13px;
+  color: #666;
+}
+
+/* Team Members Card - 3 columns, 2 rows */
+.team-members {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+.team-subtitle {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.avatar-list {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #F0F0F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.view-all-button {
+  color: #3c3c3c;
+  font-size: 13px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.2s;
+}
+
+.view-all-button:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Weekly Schedule Card - 9 columns, 6 rows */
+.weekly-schedule {
+  grid-column: span 12;
+  grid-row: span 6;
+  margin: auto; 
+}
+
+.schedule-wrapper {
+  overflow-x: auto;
+}
+
+.schedule-content {
+  min-width: 900px;
+}
+
+.schedule-header {
+  display: grid;
+  grid-template-columns: 60px repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 12px;
+}
+
+.header-week {
+  color: #666;
+}
+
+.header-day {
+  text-align: center;
+}
+
+.day-number {
+  font-weight: 600;
+  color: #4b4b4b;
+}
+
+.day-name {
+  color: #666;
+  margin-top: 2px;
+}
+
+.schedule-grid {
+  position: relative;
+  height: 528px;
+}
+
+.time-row {
+  display: grid;
+  grid-template-columns: 60px repeat(7, 1fr);
+  gap: 8px;
+  height: 48px;
+  border-top: 1px solid #F0F0F0;
+}
+
+.time-label {
+  font-size: 12px;
+  color: #666;
+  padding-top: 4px;
+}
+
+.schedule-item {
+  position: absolute;
+  border-radius: 8px;
+  padding: 8px;
+  width: 11%;
+  z-index: 1;
+}
+
+.schedule-subject {
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.schedule-time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+}
+
+.clock-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.feedback-container {
+  grid-column: span 3;  /* 3/12 = 25% */
+  grid-row: span 2;
+  
+  display: flex;
+  align-items: center;
+  background: white;
+   
+  justify-content: center;
+ 
+}
+
+.feedback-card {
+  background: white;
+  border-radius: 24px;
+  padding: 28px 20px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+.feedback-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #464646;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.feedback-subtitle {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+
+.teammates-grid {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.teammate-wrapper {
+  border-radius: 14px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.18s ease;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.teammate-wrapper:hover {
+  transform: translateY(-4px);
+}
+
+.teammate-wrapper:nth-child(1),
+.teammate-wrapper:nth-child(2) {
+  background: #E6EFFF;
+}
+
+.avatar-container {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden; /* ensure the image is clipped to the circle */
+  display: inline-block;
+}
+
+.teammate-avatar {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 10px;
+  height: 10px;
+  background: #FF4974;
+  border: 2px solid white;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 73, 116, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(255, 73, 116, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 73, 116, 0);
+  }
+}
+
+.view-all-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: #3e3e3e;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  gap: 4px;
+}
+
+.view-all-link:hover {
+  color: #314CFF;
+  transform: translateX(4px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .feedback-card {
+    padding: 32px 24px;
+  }
+
+  .feedback-title {
+    font-size: 36px;
+  }
+
+  .feedback-subtitle {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  .teammates-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .avatar-container {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback-title {
+    font-size: 32px;
+  }
+
+  .teammates-grid {
+    gap: 12px;
+  }
+
+  .teammate-wrapper {
+    padding: 16px;
+  }
+
+  .avatar-container {
+    width: 70px;
+    height: 70px;
+  }
+
+  .notification-dot {
+    width: 14px;
+    height: 14px;
+    top: 6px;
+    right: 6px;
+  }
+}
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .bento-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  
+  .subject-progress {
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+  
+  .study-time {
+    grid-column: span 6;
+    grid-row: span 3;
+  }
+  
+  .quiz-score {
+    grid-column: span 6;
+    grid-row: span 3;
+  }
+  
+  .team-members {
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+  
+  .weekly-schedule {
+    grid-column: span 6;
+    grid-row: span 4;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 16px;
+  }
+  
+  .bento-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .bento-card {
+    grid-column: span 1 !important;
+    grid-row: auto !important;
+  }
+  
+  .time-text {
+    font-size: 36px;
+  }
+}
