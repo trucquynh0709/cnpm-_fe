@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { Search, ArrowLeft, Menu, Bell, User, BookOpen, Users, Calendar, Settings } from 'lucide-react';
 import Swal from 'sweetalert2';
 import ProfileModal from '../components/ProfileModal';
+import StudentMainSidebar from '../components/StudentMainSidebar';
+
 export default function ClassDetail() {
   const [activeChapter, setActiveChapter] = useState(null);
    const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
@@ -38,23 +40,7 @@ export default function ClassDetail() {
   return (
      <div className="dashboard">
       {/* Sidebar */}
-      <aside className="sidebar">
-        <div className="logo">
-          <span className="logo-bk">BK</span> <span className="logo-text">TutorHub</span>
-        </div>
-
-        <nav className="nav-menu">
-          <a href="/dashboard" className="nav-item">Dashboard</a>
-          <a href="/dang-ky-khoa-hoc" className="nav-item active">Đăng ký khóa học</a>
-          <a href="/tim-kiem-lop-hoc" className="nav-item">Tìm kiếm lớp học</a>
-          <a href="/tien-do-hoc-tap" className="nav-item">Tiến độ học tập</a>
-          <a href="/danh-sach-khoa-hoc" className="nav-item">Danh sách khóa học</a>
-        </nav>
-
-        <div className="nav-bottom">
-          <a href="/profilesetting" className="nav-item">Cài đặt</a>
-        </div>
-      </aside>
+      <StudentMainSidebar/>
 
         {/* Content Area */}
         

@@ -7,33 +7,32 @@ const Sidebar = () => {
   const location = useLocation();
 
   const menuItems = [
-    { label: 'Dashboard', path: '/admin-dashboard', icon: '📊' },
-    { label: 'Thêm lớp học', path: '', icon: '⊕' },
-    { label: 'Tìm kiếm lớp học', path: '', icon: '🔍' },
-    { label: 'Danh sách sinh viên', path: '', icon: '👤' },
-    { label: 'Danh sách lớp học', path: '', icon: '📝' },
+    { label: 'Dashboard', path: '/coordinator-dashboard'},
+    { label: 'Danh sách sinh viên', path: '' },
+    { label: 'Danh sách lớp học', path: ''},
   ];
 
   return (
-    <aside className="sidebar-component">
+    <aside className="sidebar">
 
-        <div className="navbar__brand">BK<span className="navbar__subtitle">TutorHub</span></div> 
+      <div className="logo">
+        <span className="logo-bk">BK</span> <span className="logo-text">TutorHub</span>
+      </div>
 
-      <div className="sidebar-menu">
+      <div className="nav-menu">
         {menuItems.map((item, index) => (
           <div 
             key={index} 
-            className={`menu-item ${location.pathname === item.path ? 'active' : ''}`}
+            className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
             onClick={() => navigate(item.path)}
           >
-            <span className="icon">{item.icon}</span>
             {item.label}
           </div>
         ))}
       </div>
 
-      <div className="sidebar-footer">
-        <div className="menu-item">⚙️ Cài đặt</div>
+      <div className="nav-bottom">
+        <div className="nav-item">Cài đặt</div>
       </div>
     </aside>
   );

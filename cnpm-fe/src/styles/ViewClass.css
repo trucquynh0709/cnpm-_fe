@@ -1,7 +1,7 @@
 
-.add-session-page {
+.view-class-page {
   display: flex;
-  background-color: #BFCDEC;
+  background-color: #BFCDEC; 
   min-height: 100vh;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -57,39 +57,14 @@
   white-space: nowrap;
 }
 
+.view-mode-badge {
+    padding: 10px 60px; 
+}
+
 .header-actions-inner {
   display: flex;
   gap: 15px;
   justify-self: end;
-}
-
-.btn-secondary {
-  background-color: #60a5fa; 
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.btn-primary {
-  background-color: #3b82f6; 
-  color: white;
-  border: none;
-  padding: 10px 25px;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: opacity 0.2s;
-}
-
-.btn-secondary:hover, .btn-primary:hover {
-  opacity: 0.9;
 }
 
 .form-row {
@@ -118,10 +93,6 @@
   font-size: 15px;
 }
 
-.required {
-  color: red;
-}
-
 .form-group input[type="text"],
 .form-group input[type="date"],
 .form-group select,
@@ -135,11 +106,14 @@
   background-color: #f9fafb;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: #2563eb;
-  background-color: white;
+
+.input-readonly,
+.form-group input:read-only,
+.form-group textarea:read-only {
+  background-color: #e2e8f0 !important; 
+  color: #64748b; 
+  cursor: default;
+  border-color: #cbd5e1;
 }
 
 .form-group textarea {
@@ -147,14 +121,29 @@
   resize: vertical;
 }
 
-.input-disabled,
-.form-group input:disabled {
-  background-color: #e2e8f0 !important; 
-  color: #64748b;
-  cursor: not-allowed;
-  border-color: #cbd5e1;
+.form-footer-action {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
 }
 
-.full-width {
-  grid-column: span 2;
+.btn-edit-session {
+    background-color: #dc2626; 
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-weight: 700; 
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(220, 38, 38, 0.2);
+    transition: opacity 0.2s;
+}
+
+.btn-edit-session:hover {
+    opacity: 0.9;
+    background-color: #b91c1c;
 }

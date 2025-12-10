@@ -15,6 +15,7 @@ import CreateClass from "./pages/CreateClass";
 import ClassAdjust from "./pages/ClassAdjust";
 import CourseSite from "./pages/CourseSite";
 import AddSession from "./pages/AddSession";
+import ViewClass from "./pages/ViewClass";
 
 function App() {
   console.log("App rendered");
@@ -39,6 +40,7 @@ function App() {
         <Route path="/studentdashboard" element={<StudentDashboard />} />
         <Route path="/studenthistory" element={<StudentHistory />} />
         <Route path="/studentquizzes" element={<StudentQuizzes />} />
+        <Route path="/view-class/:id" element={<ViewClass />} />
         
       </Routes>
     </Layout>
