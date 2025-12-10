@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Search, Menu, Bell, User, BookOpen, Users, Calendar, Settings, ArrowLeft } from 'lucide-react';
 import { Link } from "react-router-dom";
 import ProfileModal from '../components/ProfileModal';
+import StudentMainSidebar from '../components/StudentMainSidebar';
 const TutorProfile = () => {
   const [activePage, setActivePage] = useState(1);
  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
@@ -64,23 +65,7 @@ const TutorProfile = () => {
   return (
     <div className="dashboard">
       {/* Sidebar */}
-      <aside className="sidebar">
-        <div className="logo">
-          <span className="logo-bk">BK</span> <span className="logo-text">TutorHub</span>
-        </div>
-
-        <nav className="nav-menu">
-          <a href="/dashboard" className="nav-item">Dashboard</a>
-          <a href="/dang-ky-khoa-hoc" className="nav-item active">Đăng ký khóa học</a>
-          <a href="/tim-kiem-lop-hoc" className="nav-item">Tìm kiếm lớp học</a>
-          <a href="/tien-do-hoc-tap" className="nav-item">Tiến độ học tập</a>
-          <a href="/danh-sach-khoa-hoc" className="nav-item">Danh sách khóa học</a>
-        </nav>
-
-        <div className="nav-bottom">
-          <a href="/profilesetting" className="nav-item">Cài đặt</a>
-        </div>
-      </aside>
+      <StudentMainSidebar/>
 
       <div className="tutor-profile-main-content">
         {/* Header */}

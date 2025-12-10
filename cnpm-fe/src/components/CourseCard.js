@@ -9,7 +9,8 @@ const CourseCard = ({ title, code, lecturer, imageType = 'code' }) => {
     navigate('/course-site');
   }; 
 
-  const handleEditClick = () => {
+  const handleEditClick = (e) => {
+    e.stopPropagation();
     navigate('/class-adjust');
   };
   

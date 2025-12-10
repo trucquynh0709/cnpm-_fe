@@ -1,0 +1,119 @@
+.student-main-sidebar {
+  width: 220px;
+  background: linear-gradient(180deg, #f5f8fc 0%, #e4efff 100%);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  border-radius: 0 2rem 2rem 0;
+  margin: 1rem 0 1rem 1rem;
+  box-shadow: 4px 0 20px rgba(0,0,0,0.08);
+  height: calc(100vh - 2rem);
+  position: sticky;
+  top: 1rem;
+}
+
+.logo {
+  margin-bottom: 2.5rem;
+  font-size: 1.25rem;
+  padding-left: 0.5rem;
+}
+
+.logo-bk { color: #2659c6; font-weight: bold; }
+.logo-text { color: #000000; font-weight: bold; }
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: #64748b;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-item:hover {
+  background: linear-gradient(90deg, #e0e8f5 0%, #d5e0f5 100%);
+  color: #3b5998;
+  transform: translateX(4px);
+}
+
+.nav-item.active {
+  background: linear-gradient(90deg, #2049A1 0%, #1341a3 51%, #0B1767 100%);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(27, 77, 187, 0.4);
+}
+
+.nav-bottom {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.student-compact-sidebar {
+  width: 80px;
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 2rem 0;
+  gap: 1.5rem;
+  flex-shrink: 0;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  border-right: 1px solid #f0f0f0;
+}
+
+.compact-menu-item {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-icon-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.sidebar-icon-link:hover {
+  background: rgba(128, 128, 128, 0.1);
+}
+
+.sidebar-icon-link.active {
+  background: linear-gradient(90deg, #4182F9 0%, rgba(65, 130, 249, 0) 100%);
+}
+
+.sidebar-icon-link.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #4182F9;
+}
+
+/* Responsive Hide */
+@media (max-width: 768px) {
+  .student-main-sidebar, 
+  .student-compact-sidebar {
+    display: none;
+  }
+}

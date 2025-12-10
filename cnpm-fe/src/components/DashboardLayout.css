@@ -1,0 +1,74 @@
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f7fa;
+}
+
+/* Container chính chứa nội dung */
+.dashboard-main-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease;
+  width: 100%; /* Đảm bảo nội dung không bị tràn */
+}
+
+/* Desktop: Đẩy nội dung sang phải 260px để tránh Sidebar */
+@media (min-width: 769px) {
+  .dashboard-main-container {
+    margin-left: 260px;
+    width: calc(100% - 260px); /* Quan trọng: Trừ đi độ rộng sidebar */
+  }
+  
+  .mobile-header-toggle {
+    display: none; /* Ẩn nút menu trên desktop */
+  }
+}
+
+/* Mobile: Nội dung full màn hình */
+@media (max-width: 768px) {
+  .dashboard-main-container {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* Thanh header nhỏ trên mobile để mở menu */
+  .mobile-header-toggle {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position:sticky;
+    top: 0;
+    z-index: 90;
+  }
+
+  .menu-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+
+  .mobile-logo {
+    font-weight: bold;
+    font-size: 18px;
+    color: #0056b3;
+  }
+}
+
+/* Wrapper cho nội dung trang, thay thế cho .dashboard-content cũ */
+.page-content-wrapper {
+  padding: 30px 40px;
+  flex: 1;
+}
+
+@media (max-width: 480px) {
+  .page-content-wrapper {
+    padding: 20px; /* Giảm padding trên điện thoại nhỏ */
+  }
+}

@@ -4,6 +4,8 @@ import CourseCard from '../components/CourseCard';
 import '../styles/CoordinatorDashboard.css';
 import { useNavigate } from 'react-router-dom';
 
+
+
 const CoordinatorDashboard = () => {
   const navigate = useNavigate();
 
@@ -17,7 +19,9 @@ const CoordinatorDashboard = () => {
     { title: 'Cấu trúc dữ liệu & Giải thuật', code: 'TL1', lecturer: 'ThS. Trần Ngọc Bảo Duy', type: 'code' },
   ];
 
+  
   return (
+    
     <div className="Coordinator-dashboard">
       <Sidebar />
       
@@ -25,26 +29,24 @@ const CoordinatorDashboard = () => {
         {/* Top Bar */}
         <header className="dashboard-header">
           <div className="welcome-text">
-            <h2>Chào mừng trở lại, aaaaaaaaấ</h2>
+            <h2>Chào mừng trở lại, Admin</h2>
           </div>
           <div className="header-actions">
             <button className="icon-btn">💬</button>
             <button className="icon-btn">🔔</button>
             <div className="user-avatar"><img src="https://i.pravatar.cc/150?img=11" alt="coordinator avatar" ></img></div>
           </div>
-        </header>
-
-
+          </header>
 
         {/* Filter & Search Bar */}
         <div className="controls-cover">
             <div className="controls-bar">
             <div className="search-box">
-                <span className="search-icon">🔍</span>
+                <span className="search-icon"></span>
                 <input type="text" placeholder="Tìm kiếm lớp học..." />
             </div>
             <div className="action-buttons">
-                <button className="btn-filter">⚙️ Bộ lọc</button>
+                <button className="btn-filter"> Bộ lọc</button>
 
                 <button 
                 className="btn-add" 
@@ -78,6 +80,8 @@ const CoordinatorDashboard = () => {
         </div>
       </main>
     </div>
+
+    
   );
 };
 

@@ -1,23 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
+import SessionItem from '../components/SessionItem'; // Import component mới
 import '../styles/CourseSite.css';
 
 const CourseSite = () => {
   const navigate = useNavigate();
 
+  // Mock data
   const sessions = [
     { id: 1, name: 'Chương 1: Lexical Analysis' },
-    { id: 1, name: 'Chương 1: Lexical Analysis' },
-    { id: 1, name: 'Chương 1: Lexical Analysis' },
-    { id: 1, name: 'Chương 1: Lexical Analysis' },
-    { id: 1, name: 'Chương 1: Lexical Analysis' },
-    { id: 1, name: 'Chương 1: Lexical Analysis' },
-    { id: 1, name: 'Chương 1: Lexical Analysis' },
-    { id: 1, name: 'Chương 1: Lexical Analysis' },
-    { id: 1, name: 'Chương 1: Lexical Analysis' },
-    { id: 1, name: 'Chương 1: Lexical Analysis' },
-    { id: 1, name: 'Chương 1: Lexical Analysis' },
+    { id: 2, name: 'Chương 2: Syntax Analysis' },
+    { id: 3, name: 'CChương 3: AST Generation' },
+    { id: 4, name: 'Chương 14: OOP & FP' },
   ];
 
   return (
@@ -55,19 +50,11 @@ const CourseSite = () => {
           <h3 className="session-section-title">Danh sách buổi học</h3>
           
           <div className="session-box">
-            <button className="btn-add-session">THÊM BUỔI HỌC</button>
+            <button className="btn-add-session" onClick={() => navigate('/add-session')}>THÊM BUỔI HỌC</button>
 
             <div className="session-list">
               {sessions.map((session) => (
-                <div key={session.id} className="session-item">
-                  <span className="session-name">{session.name}</span>
-                  
-                  <div className="session-actions">
-                    <div className="action-icon" title="Xóa">🗑️</div>
-                    <div className="action-icon" title="Xem tài liệu">📖</div>
-                    <div className="action-icon" title="Chỉnh sửa">📝</div>
-                  </div>
-                </div>
+                <SessionItem key={session.id} session={session} />
               ))}
             </div>
           </div>
